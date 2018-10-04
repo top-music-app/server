@@ -4,10 +4,16 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     email:  {
         type: String,
+        required: true,
         unique: true
     },
-    name: String,
-    password: String,
+    name: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+    },
     oauth: {
         type: Number,
         required: true
@@ -18,6 +24,8 @@ const userSchema = new Schema({
     favoriteArtists: {
         type: Array
     }
+}, {
+    timestamps: true
 });
 
 //TODO ADD CUSTOM EMAIL VALIDATOR
