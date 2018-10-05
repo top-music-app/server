@@ -19,7 +19,7 @@ module.exports = {
                     .then(data => {
                         tracks.push(data.data.message.body.track)
                         if (tracks.length === user.favoriteTracks.length) {
-                            res.status(200).json({track: JSON.stringify(tracks)})
+                            res.status(200).json({track: tracks})
                         }
                     })
                     .catch(err => {
@@ -27,7 +27,7 @@ module.exports = {
                     })
                 }
             } else {
-                res.status(200).json({track: JSON.stringify(tracks)})
+                res.status(200).json({track: tracks})
             }
         })
         .catch(err => {
@@ -50,7 +50,7 @@ module.exports = {
                     .then(data => {
                         artists.push(data.data.message.body.artist)
                         if (artists.length === user.favoriteArtists.length) {
-                            res.status(200).json({artist: JSON.stringify(artists)})
+                            res.status(200).json({artist: artists})
                         }
                     })
                     .catch(err => {
@@ -58,7 +58,7 @@ module.exports = {
                     })
                 }
             } else {
-                res.status(200).json({artist: JSON.stringify(artists)})
+                res.status(200).json({artist: artists})
             }
         })
         .catch(err => {

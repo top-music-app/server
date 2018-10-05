@@ -4,10 +4,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/top-music-app', {useNewUrlParser: true});
-var cors = require('cors');
 
 var countryRouter = require('./routes/country');
 var indexRouter = require('./routes/index');
