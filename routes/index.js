@@ -16,4 +16,6 @@ router.post('/login', UserController.login);
 
 router.get('/check', isLogin, (req, res) => { res.status(200).json({isLogin: true}) })
 
+router.get('/userinfo', isLogin, UserController.getUserInfo);
+
 module.exports = router;

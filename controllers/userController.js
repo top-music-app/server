@@ -117,14 +117,8 @@ module.exports = {
                 gender: req.body.gender
             }).then((user) => {
     
-                let jwttoken = jwt.sign({
-                    email: user.email,
-                    id: user._id
-                }, process.env.JWT_KEY);
     
-                res.status(200).json({
-                    jwttoken: jwttoken
-                });
+                res.status(200)
     
             }).catch((err) => {
                 res.status(500).json({
@@ -157,6 +151,17 @@ module.exports = {
             res.status(500).json({
                 message: 'user is not found'
             });
+        });
+    },
+
+    getUserInfo: (req, res) => {
+        User.findById(req.userId).then((user) => {
+            res.status(200).json({
+                name: user.name,
+                gender: user.gender
+            })
+        }).catch((err) => {
+            res.status(500).json(err);
         });
     }
 };
