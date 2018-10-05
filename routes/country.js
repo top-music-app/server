@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const {show, getList, getLyrik, searchCountry} = require('../controllers/country')
+const {show, getArtists, getTracks, getLyrik} = require('../controllers/country')
 
 router.get('/', show)
-router.get('/getList/:code', getList)
+router.get('/getartist/:code', getArtists)
+router.get('/gettrack/:code', getTracks)
 router.post('/getlyrik', getLyrik)
 // router.get('/search/:key', searchCountry)
 
