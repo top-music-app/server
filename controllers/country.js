@@ -13,9 +13,9 @@ module.exports = {
             console.log(err)  
         });
     },
-    getList: function (req, res){
+    getTracks: function (req, res){
         axios({
-            url: `https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page_size=5&country='${req.params.code}'&f_has_lyrics=1`,
+            url: `https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page_size=12&country='${req.params.code}'&f_has_lyrics=1`,
             data: {
                 apikey: process.env.API_KEY
             }
@@ -23,6 +23,21 @@ module.exports = {
         .then(function(data) {
             // console.log(data.data.message.body.track_list);
             res.status(200).json({data: data.data.message.body.track_list})
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
+    },
+    getArtists: function (req, res){
+        axios({
+            url: `https://api.musixmatch.com/ws/1.1/chart.artists.get?chart_name=top&page_size=9&country='${req.params.code}'&f_has_lyrics=1`,
+            data: {
+                apikey: process.env.API_KEY
+            }
+        })
+        .then(function(data) {
+            // console.log(data.data.message.body.track_list);
+            res.status(200).json({data: data.data.message.body.artist_list})
         })
         .catch(function(err) {
             console.log(err);

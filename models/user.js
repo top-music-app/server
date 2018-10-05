@@ -20,7 +20,15 @@ const userSchema = new Schema({
         type: Number,
         required: true
     },
-    gender: String
+    gender: String,
+    favoriteTracks: {
+        type: Array
+    },
+    favoriteArtists: {
+        type: Array
+    }
+}, {
+    timestamps: true
 });
 
 //TODO ADD CUSTOM EMAIL VALIDATOR
