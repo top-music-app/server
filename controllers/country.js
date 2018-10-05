@@ -2,20 +2,9 @@ const axios = require('axios')
 require('dotenv').config()
 
 module.exports = {
-    show: function(req, res){
-        axios({
-            method: 'GET',
-            url: 'http://ip-api.com/json'
-        })
-        .then((result) => {
-            res.status(200).json({data: result.data})            
-        }).catch((err) => {
-            console.log(err)  
-        });
-    },
     getTracks: function (req, res){
         axios({
-            url: `https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page_size=12&country='${req.params.code}'&f_has_lyrics=1`,
+            url: `https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page_size=12&country=${req.params.code}&f_has_lyrics=1`,
             data: {
                 apikey: process.env.API_KEY
             }
@@ -30,7 +19,7 @@ module.exports = {
     },
     getArtists: function (req, res){
         axios({
-            url: `https://api.musixmatch.com/ws/1.1/chart.artists.get?chart_name=top&page_size=9&country='${req.params.code}'&f_has_lyrics=1`,
+            url: `https://api.musixmatch.com/ws/1.1/chart.artists.get?chart_name=top&page_size=9&country=${req.params.code}&f_has_lyrics=1`,
             data: {
                 apikey: process.env.API_KEY
             }
