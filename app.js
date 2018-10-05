@@ -13,6 +13,7 @@ var countryRouter = require('./routes/country');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var favoritesRouter = require('./routes/favorites')
+var worldwideRouter = require('./routes/worldwide')
 
 app.use(cors())
 app.use(logger('dev'));
@@ -23,6 +24,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/favorites', favoritesRouter);
 app.use('/country', countryRouter);
+app.use('/worldwide', worldwideRouter);
+
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
