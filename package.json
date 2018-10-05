@@ -19,6 +19,13 @@
     "jade": "~1.11.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.1",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 224ce8c31d4721d4df025e447e8a4c7ccdab1947
+    "moongoose": "0.0.5",
+>>>>>>> setup db
     "morgan": "~1.9.0",
     "request": "^2.88.0"
   }
