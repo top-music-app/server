@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost:27017/top-music-app', {useNewUrlParser: tr
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var favoritesRouter = require('./routes/favorites')
+var worldwideRouter = require('./routes/worldwide')
 
 var app = express();
 
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/favorites', favoritesRouter);
+app.use('/worldwide', worldwideRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
