@@ -15,7 +15,6 @@ var favoritesRouter = require('./routes/favorites')
 const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 const cors = require('cors');
 >>>>>>> setup db
 
@@ -38,8 +37,12 @@ app.use(cookieParser());
 >>>>>>> setup db
 
 app.use('/', indexRouter);
+<<<<<<< HEAD
 app.use('/users', usersRouter);
 app.use('/favorites', favoritesRouter);
+=======
+
+>>>>>>> done
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
